@@ -52,8 +52,10 @@ public class DealershipTest {
 
     @Test
     public void canMoveMoney(){
-        dealerShip.moveMoney(-5000);
+        dealerShip.removeMoney(5000);
         assertEquals(5000, dealerShip.getTill());
+        dealerShip.addMoney(5000);
+        assertEquals(10000, dealerShip.getTill());
     }
 
     @Test

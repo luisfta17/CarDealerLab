@@ -27,15 +27,18 @@ public class DealerShip {
         this.garage.remove(vehicle);
     }
 
-    public void moveMoney(int money) {
+    public void addMoney(int money) {
         this.till += money;
+    }
+    public void removeMoney(int money) {
+        this.till -= money;
     }
 
     public void sellCar(Vehicle vehicle, Customer customer) {
         if (customer.getWallet() >= vehicle.getPrice()){
             customer.addCar(vehicle);
             customer.removeMoney(vehicle.getPrice());
-            this.moveMoney(vehicle.getPrice());
+            this.addMoney(vehicle.getPrice());
             this.removeCar(vehicle);
         }
     }
